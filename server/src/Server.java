@@ -70,7 +70,7 @@ public class Server {
                 sendData = new byte[512];
                 bis.read(sendData);
                 DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, clientAddress, clientPort);
-                serverSocket.send(sendPacket);
+                socket.send(sendPacket);
                 current++;
             }
         }
