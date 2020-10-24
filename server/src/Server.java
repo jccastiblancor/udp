@@ -11,11 +11,9 @@ import java.util.*;
 public class Server {
     private DatagramSocket socket;
     private List<String> listQuotes = new ArrayList<String>();
-    private Random random;
 
     public Server(int port) throws SocketException {
         socket = new DatagramSocket(port);
-        random = new Random();
     }
 
     public static void main(String[] args) {
@@ -42,8 +40,9 @@ public class Server {
         while (true) {
             DatagramPacket request = new DatagramPacket(new byte[1], 1);
             socket.receive(request);
+            System.out.println('conectado')
 
-            String quote = getRandomQuote();
+            String quote = listQuotes(2);
             byte[] buffer = quote.getBytes();
 
             InetAddress clientAddress = request.getAddress();
@@ -63,11 +62,5 @@ public class Server {
         }
 
         reader.close();
-    }
-
-    private String getRandomQuote() {
-        int randomIndex = random.nextInt(listQuotes.size());
-        String randomQuote = listQuotes.get(randomIndex);
-        return randomQuote;
     }
 }
