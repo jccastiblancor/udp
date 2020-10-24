@@ -17,8 +17,11 @@ public class client {
         try {
             InetAddress address = InetAddress.getByName("54.237.42.236") ;
             DatagramSocket socket = new DatagramSocket();
-
+            System.out.println("Connected")
             while (true) {
+
+               
+
 
                 DatagramPacket request = new DatagramPacket(new byte[1], 1, address, port);
                 socket.send(request);
