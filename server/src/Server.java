@@ -63,7 +63,7 @@ public class Server {
 
             FileInputStream fis = new FileInputStream(file);
             BufferedInputStream bis = new BufferedInputStream(fis);
-            byte sendData = new byte[512];
+            byte[] sendData = new byte[512];
             long current = 0;
             // Se inicia transmision del archivo hasta que se envien todos los paquetes
             while(current != numberPackets) {
