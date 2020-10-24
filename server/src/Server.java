@@ -57,8 +57,10 @@ public class Server {
             InetAddress clientAddress = request.getAddress();
             int clientPort = request.getPort();
 
-            int numberPackets = (int) Math.ceil((double) file.length()/(double) 512);
             File file = new File("./Quotes.txt");
+
+            int numberPackets = (int) Math.ceil((double) file.length()/(double) 512);
+
             FileInputStream fis = new FileInputStream(file);
             BufferedInputStream bis = new BufferedInputStream(fis);
             byte sendData = new byte[512];
