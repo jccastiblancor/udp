@@ -7,7 +7,7 @@ import java.net.*;
  *
  * @author www.codejava.net
  */
-public class QuoteClient {
+public class Client {
 
     public static void main(String[] args) {
 
