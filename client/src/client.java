@@ -1,100 +1,51 @@
 import java.io.*;
-import java.net.Socket;
-import java.security.MessageDigest;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.Scanner;
+import java.net.*;
 
-public class client {
-    private static String ip = "54.234.96.150";
-    private static int port = 5000;
-    private static int bufferSize = 32;
+/**
+ * This program demonstrates how to implement a UDP client program.
+ *
+ *
+ * @author www.codejava.net
+ */
+public class QuoteClient {
 
-    public static void main(String[] args) throws Exception {
-        Socket sock = new Socket(ip, port);
-        PrintWriter out = new PrintWriter(sock.getOutputStream(), true);
-        BufferedReader in = new BufferedReader(
-                new InputStreamReader(sock.getInputStream()));
-        String fromServer = "";
+    public static void main(String[] args) {
 
-        if ((fromServer = in.readLine()) != null) {
-            System.out.println("Server: " + fromServer);
-            if (fromServer.equals("Hello")) {
-                writeLog(" Server: Hello");
-                writeLog(" Client ready to receive file");
-                out.println("Ready");
-                fromServer = in.readLine();
-                if (fromServer.contains(".")) {
-                    String[] splitted= fromServer.split(",");
 
-                    fromServer=splitted[0];
-                    String checksum=splitted[1];
-                    System.out.println("Recibiendo archivo");
-                    System.out.println("Server: " + fromServer);
-                    writeLog(" Receiving " + fromServer + " file from server");
+        int port = 17;
 
-                    FileOutputStream outFile = new FileOutputStream("./" + fromServer);
-                    InputStream inFile = sock.getInputStream();
+        try {
+            InetAddress address = "54.237.42.236"
+            DatagramSocket socket = new DatagramSocket();
 
-                    int count;
-                    byte[] buffer = new byte[bufferSize * 1024]; // or 4096, or more
-                    int total= 0;
-                    int i=0;
-                    long startTime = System.nanoTime();
-                    long elapsedTime;
-                    while ((count = inFile.read(buffer)) >0) {
-                        outFile.write(buffer, 0, count);
-                        total+=count;
-                        if (i%1000==0) {
-                            System.out.println("recibido:" + total/(Math.pow(10,6))+"MB");
-                            elapsedTime = System.nanoTime() - startTime;
-                            writeLog(" File transmission, time elapsed: " +  elapsedTime/1000000000 + "s");
-                            writeLog(" File transmission, bytes received: " +  total/(Math.pow(10,6))+"MB");
-                        }
-                        i++;
-                    }
-                    elapsedTime = System.nanoTime() - startTime;
-                    System.out.println("Tiempo para recibir el archivo: "
-                            + elapsedTime/1000000000+ "s");
-                    writeLog(" File transmission finished, time elapsed: " +  elapsedTime/1000000000 + "s");
-                    writeLog(" File transmission, total bytes received: " +  total/(Math.pow(10,6))+"MB");
+            while (true) {
 
-                    System.out.println("Archivo recibido");
-                    out.println("OK");
-                    MessageDigest shaDigest = MessageDigest.getInstance("SHA-256");
+                DatagramPacket request = new DatagramPacket(new byte[1], 1, address, port);
+                socket.send(request);
 
-                    //SHA-1 checksum
-                    File file = new File("./" + fromServer);
-                    String shaChecksum = getFileChecksum(shaDigest,file );
+                byte[] buffer = new byte[512];
+                DatagramPacket response = new DatagramPacket(buffer, buffer.length);
+                socket.receive(response);
 
-                    if (shaChecksum.equals(checksum)){
-                        System.out.println("Integridad: OK");
-                        writeLog(" file integrity ok");
-                    }else{
-                        System.out.println("Integridad: F");
-                        writeLog(" file integrity F super ded :c");
-                    }
+                String quote = new String(buffer, 0, response.getLength());
 
-                    System.out.println("Cerrando conexión");
-                    writeLog(" Closing connection to server");
+                System.out.println(quote);
+                System.out.println();
 
-                    out.println("bye");
-                    outFile.close();
-                    inFile.close();
-
-                }
-
-                // out.println("Bye");
-                out.close();
-                in.close();
-                sock.close();
-                System.out.println("Conexión cerrada");
-
+                Thread.sleep(10000);
             }
 
+        } catch (SocketTimeoutException ex) {
+            System.out.println("Timeout error: " + ex.getMessage());
+            ex.printStackTrace();
+        } catch (IOException ex) {
+            System.out.println("Client error: " + ex.getMessage());
+            ex.printStackTrace();
+        } catch (InterruptedException ex) {
+            ex.printStackTrace();
         }
     }
-
+}
     public static void writeLog(String msj) throws IOException {
         FileWriter fw = new FileWriter("./clientLog_" + bufferSize + ".txt", true);
 
