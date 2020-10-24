@@ -7,7 +7,7 @@ import java.net.*;
  *
  * @author www.codejava.net
  */
-public class Client {
+public class client {
 
     public static void main(String[] args) {
 
@@ -15,7 +15,7 @@ public class Client {
         int port = 17;
 
         try {
-            InetAddress address = "54.237.42.236"
+            InetAddress address = InetAddress.getByName("54.237.42.236") ;
             DatagramSocket socket = new DatagramSocket();
 
             while (true) {
@@ -44,47 +44,5 @@ public class Client {
         } catch (InterruptedException ex) {
             ex.printStackTrace();
         }
-    }
-}
-    public static void writeLog(String msj) throws IOException {
-        FileWriter fw = new FileWriter("./clientLog_" + bufferSize + ".txt", true);
-
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-        LocalDateTime now = LocalDateTime.now();
-
-        fw.write(dtf.format(now) + msj + "\n");
-
-        fw.close();
-    }
-
-    private static String getFileChecksum(MessageDigest digest, File file) throws IOException
-    {
-
-        FileInputStream fis = new FileInputStream(file);
-
-
-        byte[] byteArray = new byte[1024];
-        int bytesCount = 0;
-
-
-        while ((bytesCount = fis.read(byteArray)) != -1) {
-            digest.update(byteArray, 0, bytesCount);
-        };
-
-
-        fis.close();
-
-
-        byte[] bytes = digest.digest();
-
-
-        StringBuilder sb = new StringBuilder();
-        for(int i=0; i< bytes.length ;i++)
-        {
-            sb.append(Integer.toString((bytes[i] & 0xff) + 0x100, 16).substring(1));
-        }
-
-        //return complete hash
-        return sb.toString();
     }
 }
