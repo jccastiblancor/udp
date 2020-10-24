@@ -8,18 +8,19 @@ import java.util.*;
  *
  * @author www.codejava.net
  */
-public class Server {
+public class QuoteServer {
     private DatagramSocket socket;
     private List<String> listQuotes = new ArrayList<String>();
     private Random random;
 
-    public Server(int port) throws SocketException {
+    public QuoteServer(int port) throws SocketException {
         socket = new DatagramSocket(port);
+        random = new Random();
     }
 
     public static void main(String[] args) {
         if (args.length < 2) {
-            System.out.println("Syntax: Server <file> <port>");
+            System.out.println("Syntax: QuoteServer <file> <port>");
             return;
         }
 
@@ -27,7 +28,7 @@ public class Server {
         int port = Integer.parseInt(args[1]);
 
         try {
-            Server server = new Server(port);
+            QuoteServer server = new QuoteServer(port);
             server.loadQuotesFromFile(quoteFile);
             server.service();
         } catch (SocketException ex) {
@@ -41,7 +42,7 @@ public class Server {
         while (true) {
             DatagramPacket request = new DatagramPacket(new byte[1], 1);
             socket.receive(request);
-            System.out.println("conectado");
+            System.out.println("Conectado");
 
             String quote = getRandomQuote();
             byte[] buffer = quote.getBytes();
