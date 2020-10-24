@@ -46,8 +46,9 @@ public class Server {
             socket.receive(request);
             System.out.println("Conectado");
 
-            String quote = getRandomQuote();
-            byte[] buffer = quote.getBytes();
+            File file = new File("./Quotes.txt");
+            //String quote = getRandomQuote();
+            byte[] buffer = file.getBytes();
 
             InetAddress clientAddress = request.getAddress();
             int clientPort = request.getPort();
@@ -84,4 +85,6 @@ public class Server {
         String randomQuote = listQuotes.get(randomIndex);
         return randomQuote;
     }
+
+
 }
