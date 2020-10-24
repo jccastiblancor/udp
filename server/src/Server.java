@@ -69,7 +69,7 @@ public class Server {
             while(current != numberPackets) {
                 sendData = new byte[512];
                 bis.read(sendData);
-                sendPacket = new DatagramPacket(sendData, sendData.length, clientAddress, clientPort);
+                DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, clientAddress, clientPort);
                 serverSocket.send(sendPacket);
                 current++;
             }
