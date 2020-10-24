@@ -1,0 +1,318 @@
+2020-10-06 18:56:13 Server: Hello
+2020-10-06 18:56:13 Client ready to receive file
+2020-10-06 18:56:37 Receiving Usuario0100.mp3 file from server
+2020-10-06 18:56:37 File transmission, time elapsed: 0s
+2020-10-06 18:56:37 File transmission, bytes received: 0.013032MB
+2020-10-06 18:56:39 File transmission, time elapsed: 2s
+2020-10-06 18:56:39 File transmission, bytes received: 8.725648MB
+2020-10-06 18:56:42 File transmission, time elapsed: 5s
+2020-10-06 18:56:42 File transmission, bytes received: 20.001224MB
+2020-10-06 18:56:46 File transmission, time elapsed: 9s
+2020-10-06 18:56:46 File transmission, bytes received: 32.584344MB
+2020-10-06 18:56:48 File transmission, time elapsed: 11s
+2020-10-06 18:56:48 File transmission, bytes received: 40.950888MB
+2020-10-06 18:56:50 File transmission, time elapsed: 13s
+2020-10-06 18:56:50 File transmission, bytes received: 49.737352MB
+2020-10-06 18:56:52 File transmission, time elapsed: 15s
+2020-10-06 18:56:52 File transmission, bytes received: 56.440144MB
+2020-10-06 18:56:54 File transmission, time elapsed: 17s
+2020-10-06 18:56:54 File transmission, bytes received: 64.436MB
+2020-10-06 18:56:57 File transmission, time elapsed: 20s
+2020-10-06 18:56:57 File transmission, bytes received: 76.619472MB
+2020-10-06 18:57:01 File transmission, time elapsed: 24s
+2020-10-06 18:57:01 File transmission, bytes received: 88.95064MB
+2020-10-06 18:57:03 File transmission, time elapsed: 26s
+2020-10-06 18:57:03 File transmission, bytes received: 98.472688MB
+2020-10-06 18:57:06 File transmission, time elapsed: 28s
+2020-10-06 18:57:06 File transmission, bytes received: 107.149104MB
+2020-10-06 18:57:06 File transmission finished, time elapsed: 29s
+2020-10-06 18:57:06 File transmission, total bytes received: 110.10048MB
+2020-10-06 18:57:07 file integrity ok
+2020-10-06 18:57:07 Closing connection to server
+2020-10-06 18:58:28 Server: Hello
+2020-10-06 18:58:28 Client ready to receive file
+2020-10-06 18:58:44 Receiving Usuario1100.mp3 file from server
+2020-10-06 18:58:44 File transmission, time elapsed: 0s
+2020-10-06 18:58:44 File transmission, bytes received: 0.013032MB
+2020-10-06 18:58:46 File transmission, time elapsed: 2s
+2020-10-06 18:58:46 File transmission, bytes received: 7.154568MB
+2020-10-06 18:58:49 File transmission, time elapsed: 4s
+2020-10-06 18:58:49 File transmission, bytes received: 16.26104MB
+2020-10-06 18:58:50 File transmission, time elapsed: 6s
+2020-10-06 18:58:50 File transmission, bytes received: 22.739392MB
+2020-10-06 18:58:52 File transmission, time elapsed: 7s
+2020-10-06 18:58:52 File transmission, bytes received: 27.426568MB
+2020-10-06 18:58:53 File transmission, time elapsed: 9s
+2020-10-06 18:58:53 File transmission, bytes received: 33.968632MB
+2020-10-06 18:58:56 File transmission, time elapsed: 11s
+2020-10-06 18:58:56 File transmission, bytes received: 42.02096MB
+2020-10-06 18:58:58 File transmission, time elapsed: 14s
+2020-10-06 18:58:58 File transmission, bytes received: 50.394744MB
+2020-10-06 18:58:59 File transmission, time elapsed: 15s
+2020-10-06 18:58:59 File transmission, bytes received: 56.299688MB
+2020-10-06 18:59:01 File transmission, time elapsed: 17s
+2020-10-06 18:59:01 File transmission, bytes received: 62.885192MB
+2020-10-06 18:59:03 File transmission, time elapsed: 19s
+2020-10-06 18:59:03 File transmission, bytes received: 70.123744MB
+2020-10-06 18:59:05 File transmission, time elapsed: 21s
+2020-10-06 18:59:05 File transmission, bytes received: 76.904728MB
+2020-10-06 18:59:07 File transmission, time elapsed: 23s
+2020-10-06 18:59:07 File transmission, bytes received: 83.878296MB
+2020-10-06 18:59:09 File transmission, time elapsed: 25s
+2020-10-06 18:59:09 File transmission, bytes received: 92.001576MB
+2020-10-06 18:59:11 File transmission, time elapsed: 27s
+2020-10-06 18:59:11 File transmission, bytes received: 98.99488MB
+2020-10-06 18:59:13 File transmission, time elapsed: 28s
+2020-10-06 18:59:13 File transmission, bytes received: 105.431776MB
+2020-10-06 18:59:14 File transmission finished, time elapsed: 30s
+2020-10-06 18:59:14 File transmission, total bytes received: 110.10048MB
+2020-10-06 18:59:14 file integrity ok
+2020-10-06 18:59:14 Closing connection to server
+2020-10-06 19:00:09 Server: Hello
+2020-10-06 19:00:09 Client ready to receive file
+2020-10-06 19:00:15 Receiving Usuario2100.mp3 file from server
+2020-10-06 19:00:15 File transmission, time elapsed: 0s
+2020-10-06 19:00:15 File transmission, bytes received: 0.013032MB
+2020-10-06 19:00:21 File transmission, time elapsed: 6s
+2020-10-06 19:00:21 File transmission, bytes received: 12.671448MB
+2020-10-06 19:00:23 File transmission, time elapsed: 8s
+2020-10-06 19:00:23 File transmission, bytes received: 22.035664MB
+2020-10-06 19:00:25 File transmission, time elapsed: 10s
+2020-10-06 19:00:25 File transmission, bytes received: 29.975048MB
+2020-10-06 19:00:27 File transmission, time elapsed: 12s
+2020-10-06 19:00:27 File transmission, bytes received: 35.448488MB
+2020-10-06 19:00:28 File transmission, time elapsed: 13s
+2020-10-06 19:00:28 File transmission, bytes received: 40.238472MB
+2020-10-06 19:00:29 File transmission, time elapsed: 14s
+2020-10-06 19:00:29 File transmission, bytes received: 44.659216MB
+2020-10-06 19:00:31 File transmission, time elapsed: 16s
+2020-10-06 19:00:31 File transmission, bytes received: 51.806544MB
+2020-10-06 19:00:33 File transmission, time elapsed: 18s
+2020-10-06 19:00:33 File transmission, bytes received: 59.124736MB
+2020-10-06 19:00:35 File transmission, time elapsed: 20s
+2020-10-06 19:00:35 File transmission, bytes received: 64.402696MB
+2020-10-06 19:00:36 File transmission, time elapsed: 21s
+2020-10-06 19:00:36 File transmission, bytes received: 69.614048MB
+2020-10-06 19:00:37 File transmission, time elapsed: 22s
+2020-10-06 19:00:37 File transmission, bytes received: 74.686392MB
+2020-10-06 19:00:39 File transmission, time elapsed: 24s
+2020-10-06 19:00:39 File transmission, bytes received: 80.091776MB
+2020-10-06 19:00:40 File transmission, time elapsed: 25s
+2020-10-06 19:00:40 File transmission, bytes received: 85.068552MB
+2020-10-06 19:00:41 File transmission, time elapsed: 26s
+2020-10-06 19:00:41 File transmission, bytes received: 89.621064MB
+2020-10-06 19:00:43 File transmission, time elapsed: 28s
+2020-10-06 19:00:43 File transmission, bytes received: 95.239304MB
+2020-10-06 19:00:45 File transmission, time elapsed: 30s
+2020-10-06 19:00:45 File transmission, bytes received: 101.609056MB
+2020-10-06 19:00:47 File transmission finished, time elapsed: 32s
+2020-10-06 19:00:47 File transmission, total bytes received: 110.10048MB
+2020-10-06 19:00:47 file integrity ok
+2020-10-06 19:00:47 Closing connection to server
+2020-10-06 19:02:57 Server: Hello
+2020-10-06 19:02:57 Client ready to receive file
+2020-10-06 19:03:08 Receiving Usuario3250.txt file from server
+2020-10-06 19:03:08 File transmission, time elapsed: 0s
+2020-10-06 19:03:08 File transmission, bytes received: 0.013032MB
+2020-10-06 19:03:12 File transmission, time elapsed: 4s
+2020-10-06 19:03:12 File transmission, bytes received: 6.077256MB
+2020-10-06 19:03:16 File transmission, time elapsed: 8s
+2020-10-06 19:03:16 File transmission, bytes received: 11.172072MB
+2020-10-06 19:03:21 File transmission, time elapsed: 13s
+2020-10-06 19:03:21 File transmission, bytes received: 14.490136MB
+2020-10-06 19:03:28 File transmission, time elapsed: 20s
+2020-10-06 19:03:28 File transmission, bytes received: 18.796488MB
+2020-10-06 19:03:33 File transmission, time elapsed: 25s
+2020-10-06 19:03:33 File transmission, bytes received: 22.160192MB
+2020-10-06 19:03:37 File transmission, time elapsed: 29s
+2020-10-06 19:03:37 File transmission, bytes received: 26.698224MB
+2020-10-06 19:03:41 File transmission, time elapsed: 33s
+2020-10-06 19:03:41 File transmission, bytes received: 35.241424MB
+2020-10-06 19:03:44 File transmission, time elapsed: 36s
+2020-10-06 19:03:44 File transmission, bytes received: 47.91668MB
+2020-10-06 19:03:49 File transmission, time elapsed: 41s
+2020-10-06 19:03:49 File transmission, bytes received: 62.07576MB
+2020-10-06 19:03:52 File transmission, time elapsed: 44s
+2020-10-06 19:03:52 File transmission, bytes received: 75.556104MB
+2020-10-06 19:03:57 File transmission, time elapsed: 49s
+2020-10-06 19:03:57 File transmission, bytes received: 91.797408MB
+2020-10-06 19:04:01 File transmission, time elapsed: 53s
+2020-10-06 19:04:01 File transmission, bytes received: 102.954248MB
+2020-10-06 19:04:06 File transmission, time elapsed: 57s
+2020-10-06 19:04:06 File transmission, bytes received: 112.401MB
+2020-10-06 19:04:09 File transmission, time elapsed: 61s
+2020-10-06 19:04:09 File transmission, bytes received: 118.889488MB
+2020-10-06 19:04:13 File transmission, time elapsed: 65s
+2020-10-06 19:04:13 File transmission, bytes received: 127.700568MB
+2020-10-06 19:04:17 File transmission, time elapsed: 69s
+2020-10-06 19:04:17 File transmission, bytes received: 135.666016MB
+2020-10-06 19:04:21 File transmission, time elapsed: 73s
+2020-10-06 19:04:21 File transmission, bytes received: 142.959592MB
+2020-10-06 19:04:25 File transmission, time elapsed: 77s
+2020-10-06 19:04:25 File transmission, bytes received: 148.36932MB
+2020-10-06 19:04:29 File transmission, time elapsed: 81s
+2020-10-06 19:04:29 File transmission, bytes received: 153.351888MB
+2020-10-06 19:04:33 File transmission, time elapsed: 85s
+2020-10-06 19:04:33 File transmission, bytes received: 158.721072MB
+2020-10-06 19:04:36 File transmission, time elapsed: 88s
+2020-10-06 19:04:36 File transmission, bytes received: 163.764456MB
+2020-10-06 19:04:40 File transmission, time elapsed: 92s
+2020-10-06 19:04:40 File transmission, bytes received: 167.973792MB
+2020-10-06 19:04:44 File transmission, time elapsed: 96s
+2020-10-06 19:04:44 File transmission, bytes received: 172.888304MB
+2020-10-06 19:04:47 File transmission, time elapsed: 99s
+2020-10-06 19:04:47 File transmission, bytes received: 178.503648MB
+2020-10-06 19:04:52 File transmission, time elapsed: 104s
+2020-10-06 19:04:52 File transmission, bytes received: 184.75032MB
+2020-10-06 19:04:56 File transmission, time elapsed: 108s
+2020-10-06 19:04:56 File transmission, bytes received: 191.3532MB
+2020-10-06 19:05:01 File transmission, time elapsed: 113s
+2020-10-06 19:05:01 File transmission, bytes received: 203.801656MB
+2020-10-06 19:05:07 File transmission, time elapsed: 119s
+2020-10-06 19:05:07 File transmission, bytes received: 219.42268MB
+2020-10-06 19:05:16 File transmission, time elapsed: 127s
+2020-10-06 19:05:16 File transmission, bytes received: 235.398464MB
+2020-10-06 19:05:21 File transmission, time elapsed: 133s
+2020-10-06 19:05:21 File transmission, bytes received: 250.095664MB
+2020-10-06 19:05:25 File transmission, time elapsed: 137s
+2020-10-06 19:05:25 File transmission, bytes received: 260.592216MB
+2020-10-06 19:05:31 File transmission, time elapsed: 143s
+2020-10-06 19:05:31 File transmission, bytes received: 272.79596MB
+2020-10-06 19:05:33 File transmission finished, time elapsed: 145s
+2020-10-06 19:05:33 File transmission, total bytes received: 275.775488MB
+2020-10-06 19:05:34 file integrity ok
+2020-10-06 19:05:34 Closing connection to server
+2020-10-06 19:05:37 Server: Hello
+2020-10-06 19:05:37 Client ready to receive file
+2020-10-06 19:05:46 Receiving Usuario4250.txt file from server
+2020-10-06 19:05:46 File transmission, time elapsed: 0s
+2020-10-06 19:05:46 File transmission, bytes received: 0.013032MB
+2020-10-06 19:05:49 File transmission, time elapsed: 3s
+2020-10-06 19:05:49 File transmission, bytes received: 8.879136MB
+2020-10-06 19:05:52 File transmission, time elapsed: 6s
+2020-10-06 19:05:52 File transmission, bytes received: 20.504592MB
+2020-10-06 19:05:54 File transmission, time elapsed: 8s
+2020-10-06 19:05:54 File transmission, bytes received: 27.024024MB
+2020-10-06 19:05:56 File transmission, time elapsed: 10s
+2020-10-06 19:05:56 File transmission, bytes received: 34.321944MB
+2020-10-06 19:05:59 File transmission, time elapsed: 12s
+2020-10-06 19:05:59 File transmission, bytes received: 43.61376MB
+2020-10-06 19:06:01 File transmission, time elapsed: 15s
+2020-10-06 19:06:01 File transmission, bytes received: 53.613112MB
+2020-10-06 19:06:05 File transmission, time elapsed: 18s
+2020-10-06 19:06:05 File transmission, bytes received: 66.288904MB
+2020-10-06 19:06:08 File transmission, time elapsed: 22s
+2020-10-06 19:06:08 File transmission, bytes received: 78.4092MB
+2020-10-06 19:06:13 File transmission, time elapsed: 27s
+2020-10-06 19:06:13 File transmission, bytes received: 96.519336MB
+2020-10-06 19:06:21 File transmission, time elapsed: 34s
+2020-10-06 19:06:21 File transmission, bytes received: 116.16092MB
+2020-10-06 19:06:26 File transmission, time elapsed: 40s
+2020-10-06 19:06:26 File transmission, bytes received: 132.17216MB
+2020-10-06 19:06:32 File transmission, time elapsed: 45s
+2020-10-06 19:06:32 File transmission, bytes received: 150.0224MB
+2020-10-06 19:06:34 File transmission, time elapsed: 48s
+2020-10-06 19:06:34 File transmission, bytes received: 159.817208MB
+2020-10-06 19:06:37 File transmission, time elapsed: 51s
+2020-10-06 19:06:37 File transmission, bytes received: 170.005336MB
+2020-10-06 19:06:42 File transmission, time elapsed: 55s
+2020-10-06 19:06:42 File transmission, bytes received: 186.889016MB
+2020-10-06 19:06:43 File transmission, time elapsed: 56s
+2020-10-06 19:06:43 File transmission, bytes received: 191.731128MB
+2020-10-06 19:06:45 File transmission, time elapsed: 58s
+2020-10-06 19:06:45 File transmission, bytes received: 199.395392MB
+2020-10-06 19:06:46 File transmission, time elapsed: 60s
+2020-10-06 19:06:46 File transmission, bytes received: 205.212008MB
+2020-10-06 19:06:48 File transmission, time elapsed: 61s
+2020-10-06 19:06:48 File transmission, bytes received: 210.549336MB
+2020-10-06 19:06:50 File transmission, time elapsed: 64s
+2020-10-06 19:06:50 File transmission, bytes received: 219.941064MB
+2020-10-06 19:06:52 File transmission, time elapsed: 65s
+2020-10-06 19:06:52 File transmission, bytes received: 224.993136MB
+2020-10-06 19:06:53 File transmission, time elapsed: 67s
+2020-10-06 19:06:53 File transmission, bytes received: 230.227656MB
+2020-10-06 19:06:57 File transmission, time elapsed: 70s
+2020-10-06 19:06:57 File transmission, bytes received: 241.516264MB
+2020-10-06 19:07:02 File transmission, time elapsed: 76s
+2020-10-06 19:07:02 File transmission, bytes received: 258.174056MB
+2020-10-06 19:07:04 File transmission, time elapsed: 78s
+2020-10-06 19:07:04 File transmission, bytes received: 267.021336MB
+2020-10-06 19:07:06 File transmission, time elapsed: 79s
+2020-10-06 19:07:06 File transmission, bytes received: 271.97784MB
+2020-10-06 19:07:07 File transmission finished, time elapsed: 80s
+2020-10-06 19:07:07 File transmission, total bytes received: 275.775488MB
+2020-10-06 19:07:08 file integrity ok
+2020-10-06 19:07:08 Closing connection to server
+2020-10-06 19:07:29 Server: Hello
+2020-10-06 19:07:29 Client ready to receive file
+2020-10-06 19:08:06 Server: Hello
+2020-10-06 19:08:06 Client ready to receive file
+2020-10-06 19:08:16 Receiving Usuario0250.txt file from server
+2020-10-06 19:08:16 File transmission, time elapsed: 0s
+2020-10-06 19:08:16 File transmission, bytes received: 0.010136MB
+2020-10-06 19:08:22 File transmission, time elapsed: 5s
+2020-10-06 19:08:22 File transmission, bytes received: 11.543456MB
+2020-10-06 19:08:25 File transmission, time elapsed: 8s
+2020-10-06 19:08:25 File transmission, bytes received: 20.864232MB
+2020-10-06 19:08:26 File transmission, time elapsed: 10s
+2020-10-06 19:08:26 File transmission, bytes received: 27.0052MB
+2020-10-06 19:08:29 File transmission, time elapsed: 12s
+2020-10-06 19:08:29 File transmission, bytes received: 36.427336MB
+2020-10-06 19:08:31 File transmission, time elapsed: 14s
+2020-10-06 19:08:31 File transmission, bytes received: 43.806344MB
+2020-10-06 19:08:33 File transmission, time elapsed: 16s
+2020-10-06 19:08:33 File transmission, bytes received: 51.499568MB
+2020-10-06 19:08:34 File transmission, time elapsed: 17s
+2020-10-06 19:08:34 File transmission, bytes received: 56.040496MB
+2020-10-06 19:08:36 File transmission, time elapsed: 20s
+2020-10-06 19:08:36 File transmission, bytes received: 64.046488MB
+2020-10-06 19:08:39 File transmission, time elapsed: 22s
+2020-10-06 19:08:39 File transmission, bytes received: 72.224792MB
+2020-10-06 19:08:44 File transmission, time elapsed: 27s
+2020-10-06 19:08:44 File transmission, bytes received: 90.149048MB
+2020-10-06 19:08:46 File transmission, time elapsed: 30s
+2020-10-06 19:08:46 File transmission, bytes received: 99.936616MB
+2020-10-06 19:08:50 File transmission, time elapsed: 33s
+2020-10-06 19:08:50 File transmission, bytes received: 112.45168MB
+2020-10-06 19:08:53 File transmission, time elapsed: 36s
+2020-10-06 19:08:53 File transmission, bytes received: 122.923616MB
+2020-10-06 19:08:56 File transmission, time elapsed: 39s
+2020-10-06 19:08:56 File transmission, bytes received: 133.850224MB
+2020-10-06 19:08:59 File transmission, time elapsed: 42s
+2020-10-06 19:08:59 File transmission, bytes received: 144.361256MB
+2020-10-06 19:09:02 File transmission, time elapsed: 46s
+2020-10-06 19:09:02 File transmission, bytes received: 157.488824MB
+2020-10-06 19:09:04 File transmission, time elapsed: 47s
+2020-10-06 19:09:04 File transmission, bytes received: 164.222024MB
+2020-10-06 19:09:07 File transmission, time elapsed: 50s
+2020-10-06 19:09:07 File transmission, bytes received: 174.83876MB
+2020-10-06 19:09:08 File transmission, time elapsed: 51s
+2020-10-06 19:09:08 File transmission, bytes received: 179.079952MB
+2020-10-06 19:09:11 File transmission, time elapsed: 54s
+2020-10-06 19:09:11 File transmission, bytes received: 189.747368MB
+2020-10-06 19:09:13 File transmission, time elapsed: 57s
+2020-10-06 19:09:13 File transmission, bytes received: 197.908296MB
+2020-10-06 19:09:16 File transmission, time elapsed: 59s
+2020-10-06 19:09:16 File transmission, bytes received: 206.240088MB
+2020-10-06 19:09:19 File transmission, time elapsed: 62s
+2020-10-06 19:09:19 File transmission, bytes received: 219.018688MB
+2020-10-06 19:09:21 File transmission, time elapsed: 64s
+2020-10-06 19:09:21 File transmission, bytes received: 226.015424MB
+2020-10-06 19:09:23 File transmission, time elapsed: 66s
+2020-10-06 19:09:23 File transmission, bytes received: 231.978288MB
+2020-10-06 19:09:24 File transmission, time elapsed: 68s
+2020-10-06 19:09:24 File transmission, bytes received: 239.167608MB
+2020-10-06 19:09:27 File transmission, time elapsed: 70s
+2020-10-06 19:09:27 File transmission, bytes received: 248.38992MB
+2020-10-06 19:09:29 File transmission, time elapsed: 72s
+2020-10-06 19:09:29 File transmission, bytes received: 255.446024MB
+2020-10-06 19:09:30 File transmission, time elapsed: 74s
+2020-10-06 19:09:30 File transmission, bytes received: 261.592784MB
+2020-10-06 19:09:33 File transmission, time elapsed: 76s
+2020-10-06 19:09:33 File transmission, bytes received: 269.063016MB
+2020-10-06 19:09:34 File transmission, time elapsed: 77s
+2020-10-06 19:09:34 File transmission, bytes received: 274.443784MB
+2020-10-06 19:09:34 File transmission finished, time elapsed: 78s
+2020-10-06 19:09:34 File transmission, total bytes received: 275.772592MB
+2020-10-06 19:09:35 file integrity F super ded :c
+2020-10-06 19:09:35 Closing connection to server
