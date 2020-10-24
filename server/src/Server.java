@@ -32,7 +32,7 @@ public class Server {
         try {
             Server server = new Server(port);
             server.loadQuotesFromFile(quoteFile);
-            writeLog(" Server is listening on port " + port);
+            //writeLog(" Server is listening on port " + port);
             System.out.println("Server is listening on port " + port);
             server.service();
         } catch (SocketException ex) {
@@ -83,17 +83,6 @@ public class Server {
         }
 
         reader.close();
-    }
-
-    private void writeLog(String msj) throws IOException {
-        FileWriter fw = new FileWriter(logName, true);
-
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-        LocalDateTime now = LocalDateTime.now();
-
-        fw.write(dtf.format(now) + msj + "\n");
-
-        fw.close();
     }
 
     private String getRandomQuote() {
