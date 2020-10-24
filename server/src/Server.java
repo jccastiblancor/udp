@@ -48,15 +48,29 @@ public class Server {
             socket.receive(request);
             System.out.println("Conectado");
 
-            File file = new File("./Quotes.txt");
-            //String quote = getRandomQuote();
+            /*String quote = getRandomQuote();
             byte[] buffer = file.getBytes();
+
+            DatagramPacket response = new DatagramPacket(buffer, buffer.length, clientAddress, clientPort);
+            socket.send(response);*/
 
             InetAddress clientAddress = request.getAddress();
             int clientPort = request.getPort();
 
-            DatagramPacket response = new DatagramPacket(buffer, buffer.length, clientAddress, clientPort);
-            socket.send(response);
+            int numberPackets = (int) Math.ceil((double) file.length()/(double) size_buffer);
+            File file = new File("./Quotes.txt");
+            FileInputStream fis = new FileInputStream(file);
+            BufferedInputStream bis = new BufferedInputStream(fis);
+            sendData = new byte[512];
+            long current = 0;
+            // Se inicia transmision del archivo hasta que se envien todos los paquetes
+            while(current != numberPackets) {
+                sendData = new byte[512];
+                bis.read(sendData);
+                sendPacket = new DatagramPacket(sendData, sendData.length, clientAddress, clientPort);
+                serverSocket.send(sendPacket);
+                current++;
+            }
         }
     }
 
