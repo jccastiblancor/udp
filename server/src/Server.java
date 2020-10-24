@@ -42,7 +42,7 @@ public class Server {
             socket.receive(request);
             System.out.println("conectado");
 
-            String quote = listQuotes(2);
+            String quote = listQuotes[2];
             byte[] buffer = quote.getBytes();
 
             InetAddress clientAddress = request.getAddress();
