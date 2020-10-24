@@ -40,7 +40,7 @@ public class Server {
         while (true) {
             DatagramPacket request = new DatagramPacket(new byte[1], 1);
             socket.receive(request);
-            System.out.println('conectado');
+            System.out.println("conectado");
 
             String quote = listQuotes(2);
             byte[] buffer = quote.getBytes();
