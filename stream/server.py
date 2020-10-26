@@ -8,6 +8,8 @@ import struct
 import math
 
 
+
+
 class FrameSegment(object):
     """
     Object to break down image frame segment
@@ -15,7 +17,7 @@ class FrameSegment(object):
     """
     MAX_DGRAM = 2**16
     MAX_IMAGE_DGRAM = MAX_DGRAM - 64 # extract 64 bytes in case UDP frame overflown
-    def __init__(self, sock, port, addr="54.237.42.236"):
+    def __init__(self, sock, port, addr="192.168.1.113"):
         self.s = sock
         self.port = port
         self.addr = addr
