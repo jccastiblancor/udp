@@ -42,7 +42,7 @@ public class Server {
         }
     }
 
-    private void service() throws IOException {
+    private void service() throws IOExceptionp;{
         while (true) {
             DatagramPacket request = new DatagramPacket(new byte[1], 1);
             socket.receive(request);
@@ -53,7 +53,8 @@ public class Server {
 
             File file = new File("./Quotes.txt");
 
-            MessageDigest shaDigest = MessageDigest.getInstance("SHA-256");
+
+        };/.            MessageDigest shaDigest = MessageDigest.getInstance("SHA-256");
             String shaChecksum = getFileChecksum(shaDigest, file);
             String send =  file.getName()+","+shaChecksum;
             DatagramPacket sendPacket = new DatagramPacket(send, send.length, clientAddress, clientPort);
