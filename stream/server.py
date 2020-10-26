@@ -15,7 +15,7 @@ class FrameSegment(object):
     """
     MAX_DGRAM = 2**16
     MAX_IMAGE_DGRAM = MAX_DGRAM - 64 # extract 64 bytes in case UDP frame overflown
-    def __init__(self, sock, port, addr="127.0.0.1"):
+    def __init__(self, sock, port, addr="54.237.42.236"):
         self.s = sock
         self.port = port
         self.addr = addr
@@ -48,7 +48,7 @@ def main():
 
     fs = FrameSegment(s, port)
 
-    cap = cv2.VideoCapture(0)
+    cap = cv2.VideoCapture("./sad.mp4")
     while (cap.isOpened()):
         _, frame = cap.read()
         fs.udp_frame(frame)
