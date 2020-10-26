@@ -25,7 +25,7 @@ def main():
 
     # Set up socket
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-    s.bind(('54.237.42.236', 12345))
+    s.bind(('192.168.1.131', 12345))
     dat = b''
     dump_buffer(s)
 
