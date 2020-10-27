@@ -6,12 +6,7 @@ import java.util.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-/**
- * This program demonstrates how to implement a UDP server program.
- *
- *
- * @author www.codejava.net
- */
+
 public class Server {
     private DatagramSocket socket;
     private List<String> listQuotes = new ArrayList<String>();
@@ -28,12 +23,12 @@ public class Server {
             return;
         }
 
-        String quoteFile = args[0];
+        String shareFile = args[0];
         int port = Integer.parseInt(args[1]);
 
         try {
             Server server = new Server(port);
-            server.loadQuotesFromFile(quoteFile);
+            server.loadQuotesFromFile(shareFile);
             //writeLog(" Server is listening on port " + port);
             System.out.println("Server is listening on port " + port);
             server.service();
@@ -84,8 +79,8 @@ public class Server {
     }
 
 
-    private void loadQuotesFromFile(String quoteFile) throws IOException {
-        BufferedReader reader = new BufferedReader(new FileReader(quoteFile));
+    private void loadQuotesFromFile(String shareFile) throws IOException {
+        BufferedReader reader = new BufferedReader(new FileReader(shareFile));
         String aQuote;
 
         while ((aQuote = reader.readLine()) != null) {
