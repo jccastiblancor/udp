@@ -28,15 +28,15 @@ public class Server {
             return;
         }
 
-        String quoteFile = args[0];
+        String file = args[0];
         int port = Integer.parseInt(args[1]);
 
         try {
             Server server = new Server(port);
-            server.loadQuotesFromFile(quoteFile);
+            //server.loadQuotesFromFile(quoteFile);
             //writeLog(" Server is listening on port " + port);
             System.out.println("Server is listening on port " + port);
-            server.service();
+            server.service(file);
         } catch (SocketException ex) {
             System.out.println("Socket error: " + ex.getMessage());
         } catch (IOException ex) {
@@ -46,7 +46,7 @@ public class Server {
         }
     }
 
-    private void service() throws IOException, NoSuchAlgorithmException {
+    private void service(fileName) throws IOException, NoSuchAlgorithmException {
         while (true) {
             DatagramPacket request = new DatagramPacket(new byte[1], 1);
             socket.receive(request);
@@ -55,7 +55,7 @@ public class Server {
             InetAddress clientAddress = request.getAddress();
             int clientPort = request.getPort();
 
-            File file = new File("./Quotes.txt");
+            File file = new File(fileName);
             MessageDigest shaDigest = MessageDigest.getInstance("SHA-256");
             String shaChecksum = getFileChecksum(shaDigest, file);
             String send =  file.getName()+","+shaChecksum;
