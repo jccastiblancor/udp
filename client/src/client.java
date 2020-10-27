@@ -1,5 +1,8 @@
 import java.io.*;
 import java.net.*;
+import java.security.MessageDigest;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 /**
  * This program demonstrates how to implement a UDP client program.
@@ -8,7 +11,7 @@ import java.net.*;
  * @author www.codejava.net
  */
 public class client {
-
+    public static int bufferSize=512;
     public static void main(String[] args) {
 
 
@@ -29,11 +32,11 @@ public class client {
                 DatagramPacket response= new DatagramPacket(buffer, buffer.length);
                 String name_checksum= new String (buffer,0,response.getLength());
                 String[] splitted= name_checksum.split(",");
-                name= splittled[0];
-                checksum=splitted[1];
+                String name= splitted[0];
+                String checksum=splitted[1];
 
                 buffer = new byte[512];
-                DatagramPacket response = new DatagramPacket(buffer, buffer.length);
+                response = new DatagramPacket(buffer, buffer.length);
                 socket.receive(response);
                 FileOutputStream outFile = new FileOutputStream("./" + name);
                 String quote = new String(buffer, 0, response.getLength());
@@ -56,7 +59,7 @@ public class client {
         }
     }
     public static void writeLog(String msj) throws IOException {
-        FileWriter fw = new FileWriter("./clientLog_" + bufferSize + ".txt", true);
+        FileWriter fw = new FileWriter("./clientLog_" + bufferSize+ ".txt", true);
 
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         LocalDateTime now = LocalDateTime.now();

@@ -8,6 +8,8 @@ import struct
 import math
 
 
+
+
 class FrameSegment(object):
     """
     Object to break down image frame segment
