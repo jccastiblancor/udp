@@ -21,6 +21,7 @@ public class client {
             InetAddress address = InetAddress.getByName("54.237.42.236") ;
             DatagramSocket socket = new DatagramSocket();
             System.out.println("Connected");
+            writeLog("Connected");
             while (true) {
 
 
@@ -28,19 +29,38 @@ public class client {
 
                 DatagramPacket request = new DatagramPacket(new byte[1], 1, address, port);
                 socket.send(request);
+                writeLog("Hello Sent!");
                 byte[] buffer = new byte[512];
                 DatagramPacket response= new DatagramPacket(buffer, buffer.length);
+                socket.receive(response);
                 String name_checksum= new String (buffer,0,response.getLength());
+
                 String[] splitted= name_checksum.split(",");
+                System.out.println(name_checksum);
+
                 String name= splitted[0];
                 String checksum=splitted[1];
+                writeLog("Prepared to recieve file "+ name+" with checksum "+checksum );
 
-                buffer = new byte[512];
-                response = new DatagramPacket(buffer, buffer.length);
-                socket.receive(response);
+                //buffer = new byte[512];
+                //response = new DatagramPacket(buffer, buffer.length);
+                //socket.receive(response);
+
+                ////////////////
+                int count;
+                int total=0;
                 FileOutputStream outFile = new FileOutputStream("./" + name);
-                String quote = new String(buffer, 0, response.getLength());
+                //String quote = new String(buffer, 0, response.getLength());
+                byte[] receiveData = new byte[1000000];
+                while (receiveData != null) {
+                    DatagramPacket receivePacket = new DatagramPacket(receiveData, receiveData.length);
+                    count= receivePacket.getLength();
+                    outFile.write(receivePacket.getData(), 0, count);
+                    total+=count;
+                    System.out.printf("RECEIVED: %s ", new String(receivePacket.getData()));
+                }
 
+                //String myCheck=getFileChecksum()
                 //System.out.println(quote);
 
                 System.out.println();
