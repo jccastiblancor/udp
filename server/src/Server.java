@@ -29,7 +29,7 @@ public class Server {
         try {
             Server server = new Server(port);
             //server.loadQuotesFromFile(quoteFile);
-            //writeLog(" Server is listening on port " + port);
+            writeLog(" Server is listening on port " + port);
             System.out.println("Server is listening on port " + port);
             server.service(file);
         } catch (SocketException ex) {
@@ -70,30 +70,8 @@ public class Server {
                 socket.send(sendPacket);
                 current++;
             }
-
+            socket.close();
         }
-
-
-
-
-    }
-
-
-    private void loadQuotesFromFile(String shareFile) throws IOException {
-        BufferedReader reader = new BufferedReader(new FileReader(shareFile));
-        String aQuote;
-
-        while ((aQuote = reader.readLine()) != null) {
-            listQuotes.add(aQuote);
-        }
-
-        reader.close();
-    }
-
-    private String getRandomQuote() {
-        int randomIndex = random.nextInt(listQuotes.size());
-        String randomQuote = listQuotes.get(randomIndex);
-        return randomQuote;
     }
 
     private static String getFileChecksum(MessageDigest digest, File file) throws IOException {
@@ -114,6 +92,17 @@ public class Server {
         }
 
         return sb.toString();
+    }
+
+    public void writeLog(String msj) throws IOException {
+        FileWriter fw = new FileWriter("./log.txt", true);
+
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        LocalDateTime now = LocalDateTime.now();
+
+        fw.write(dtf.format(now) + msj + "\n");
+
+        fw.close();
     }
 
 
