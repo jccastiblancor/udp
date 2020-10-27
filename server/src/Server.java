@@ -46,6 +46,7 @@ public class Server {
             DatagramPacket request = new DatagramPacket(new byte[1], 1);
             socket.receive(request);
             System.out.println("Conectado");
+            writeLog(" New client connected, assigned Id: 0");
 
             InetAddress clientAddress = request.getAddress();
             int clientPort = request.getPort();
@@ -53,7 +54,8 @@ public class Server {
             File file = new File(fileName);
             MessageDigest shaDigest = MessageDigest.getInstance("SHA-256");
             String shaChecksum = getFileChecksum(shaDigest, file);
-            String send =  file.getName()+","+shaChecksum;
+            String send =  file.getName()+","+shaChecksum+","+ file.length();
+            
             DatagramPacket sendPacket = new DatagramPacket(send.getBytes(), send.length(), clientAddress, clientPort);
             socket.send(sendPacket);
             int numberPackets = (int) Math.ceil((double) file.length()/(double) 512);
