@@ -94,7 +94,7 @@ public class Server {
         return sb.toString();
     }
 
-    public void writeLog(String msj) throws IOException {
+    private static void writeLog(String msj) throws IOException {
         FileWriter fw = new FileWriter("./log.txt", true);
 
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
