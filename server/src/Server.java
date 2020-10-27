@@ -41,7 +41,7 @@ public class Server {
         }
     }
 
-    private void service(fileName) throws IOException, NoSuchAlgorithmException {
+    private void service(String fileName) throws IOException, NoSuchAlgorithmException {
         while (true) {
             DatagramPacket request = new DatagramPacket(new byte[1], 1);
             socket.receive(request);
