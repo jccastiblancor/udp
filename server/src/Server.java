@@ -55,7 +55,7 @@ public class Server {
             MessageDigest shaDigest = MessageDigest.getInstance("SHA-256");
             String shaChecksum = getFileChecksum(shaDigest, file);
             String send =  file.getName()+","+shaChecksum+","+ file.length();
-            
+
             DatagramPacket sendPacket = new DatagramPacket(send.getBytes(), send.length(), clientAddress, clientPort);
             socket.send(sendPacket);
             int numberPackets = (int) Math.ceil((double) file.length()/(double) 512);
@@ -72,7 +72,6 @@ public class Server {
                 socket.send(sendPacket);
                 current++;
             }
-            socket.close();
         }
     }
 
