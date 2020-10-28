@@ -1,6 +1,7 @@
 import java.io.*;
 import java.net.*;
 import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
@@ -22,51 +23,77 @@ public class client {
             DatagramSocket socket = new DatagramSocket();
             System.out.println("Connected");
             writeLog("Connected");
-            while (true) {
 
 
 
 
-                DatagramPacket request = new DatagramPacket(new byte[1], 1, address, port);
-                socket.send(request);
-                writeLog("Hello Sent!");
-                byte[] buffer = new byte[512];
-                DatagramPacket response= new DatagramPacket(buffer, buffer.length);
-                socket.receive(response);
-                String name_checksum= new String (buffer,0,response.getLength());
+            DatagramPacket request = new DatagramPacket(new byte[1], 1, address, port);
+            socket.send(request);
+            writeLog("Hello Sent!");
+            byte[] buffer = new byte[512];
+            DatagramPacket response= new DatagramPacket(buffer, buffer.length);
+            socket.receive(response);
+            String name_checksum= new String (buffer,0,response.getLength());
 
-                String[] splitted= name_checksum.split(",");
-                System.out.println(name_checksum);
+            String[] splitted= name_checksum.split(",");
+            System.out.println(name_checksum);
 
-                String name= splitted[0];
-                String checksum=splitted[1];
-                writeLog("Prepared to recieve file "+ name+" with checksum "+checksum );
+            String name= splitted[0];
+            String checksum=splitted[1];
+            String fileLen=splitted[2];
+            writeLog("Prepared to recieve file "+ name+" with checksum "+checksum + " file Lenght: " + fileLen );
 
-                //buffer = new byte[512];
-                //response = new DatagramPacket(buffer, buffer.length);
-                //socket.receive(response);
+            //buffer = new byte[512];
+            //response = new DatagramPacket(buffer, buffer.length);
+            //socket.receive(response);
 
-                ////////////////
-                int count;
-                int total=0;
-                FileOutputStream outFile = new FileOutputStream("./" + name);
-                //String quote = new String(buffer, 0, response.getLength());
-                byte[] receiveData = new byte[1000000];
-                while (receiveData != null) {
-                    DatagramPacket receivePacket = new DatagramPacket(receiveData, receiveData.length);
-                    count= receivePacket.getLength();
-                    outFile.write(receivePacket.getData(), 0, count);
-                    total+=count;
-                    System.out.printf("RECEIVED: %s ", new String(receivePacket.getData()));
-                }
+            ////////////////
+            int count;
+            int total=0;
 
-                //String myCheck=getFileChecksum()
-                //System.out.println(quote);
-
-                System.out.println();
-
-                Thread.sleep(10000);
+            File archivito = new File("./" + name);
+            archivito.createNewFile();
+            FileOutputStream outFile = new FileOutputStream(archivito, false);
+            //String quote = new String(buffer, 0, response.getLength());
+            BufferedOutputStream buf = new BufferedOutputStream(outFile);
+            System.out.println(fileLen);
+            total=0;
+            byte[] receiveData = new byte[1000000];
+            int paquetes = (int) Math.ceil((double) Integer.parseInt(fileLen)/(double) 512);
+            long startTime = System.nanoTime();
+            long elapsedTime;
+            for (int i =0; i<paquetes; i++){
+                DatagramPacket receivePacket = new DatagramPacket(receiveData, receiveData.length);
+                socket.receive(receivePacket);
+                total+=receivePacket.getLength();
+                receiveData = receivePacket.getData();
+                outFile.write(receiveData);
+                writeLog("Recibido: "+ total+ " B");
+                System.out.println("Recibido: "+ total+ " B");
             }
+            elapsedTime = System.nanoTime() - startTime;
+            System.out.println("Tiempo para recibir el archivo: "
+                    + elapsedTime/1000000000+ "s");
+            writeLog(" File transmission finished, time elapsed: " +  elapsedTime/1000000000 + "s");
+            writeLog(" File transmission, total bytes received: " +  total/(Math.pow(10,6))+"MB");
+            System.out.println("Termino");
+            File recibido= new File ("./"+name);
+            MessageDigest shaDigest = MessageDigest.getInstance("SHA-256");
+            String myCheck= getFileChecksum(shaDigest,recibido);
+
+            if (myCheck.equals(checksum)){
+                System.out.println("Integridad: OK");
+                writeLog("Integridad: OK");
+            }else{
+                System.out.println("Intregridad: F");
+                writeLog("Intregridad: F");
+            }
+            writeLog("Conexion Cerrada");
+            buf.close();
+            outFile.close();
+
+
+
 
         } catch (SocketTimeoutException ex) {
             System.out.println("Timeout error: " + ex.getMessage());
@@ -74,8 +101,8 @@ public class client {
         } catch (IOException ex) {
             System.out.println("Client error: " + ex.getMessage());
             ex.printStackTrace();
-        } catch (InterruptedException ex) {
-            ex.printStackTrace();
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
         }
     }
     public static void writeLog(String msj) throws IOException {
