@@ -79,7 +79,7 @@ public class Server {
                 socket.send(sendPacket);
                 current++;
             }
-            long elapsedTime = System.nanoTime() - startTime;
+            elapsedTime = System.nanoTime() - startTime;
             System.out.println("Tiempo para enviar el archivo: " + elapsedTime/1000000000+ "s");
             System.out.println(": Archivo Enviado!");
             writeLog("Total time: " + elapsedTime/1000000000 + " s");
