@@ -22,10 +22,10 @@ def main():
 
     ack = "ack"
     multicast_group = "192.168.1.131"
-    server_address = ('192.168.1.102', 12345)
+    server_address = ('127.0.0.1', 12345)
     # Set up socket
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-    s.connect(server_address)
+    s.bind(server_address)
 
     #group = socket.inet_aton(multicast_group)
     #mreq = struct.pack('4sL', group, socket.INADDR_ANY)

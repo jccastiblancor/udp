@@ -23,15 +23,15 @@ public class Server {
             return;
         }
 
-        String shareFile = args[0];
+        String file = args[0];
         int port = Integer.parseInt(args[1]);
 
         try {
             Server server = new Server(port);
-            server.loadQuotesFromFile(shareFile);
-            //writeLog(" Server is listening on port " + port);
+            //server.loadQuotesFromFile(quoteFile);
+            writeLog(" Server is listening on port " + port);
             System.out.println("Server is listening on port " + port);
-            server.service();
+            server.service(file);
         } catch (SocketException ex) {
             System.out.println("Socket error: " + ex.getMessage());
         } catch (IOException ex) {
@@ -41,19 +41,23 @@ public class Server {
         }
     }
 
-    private void service() throws IOException, NoSuchAlgorithmException {
+    private void service(String fileName) throws IOException, NoSuchAlgorithmException {
         while (true) {
             DatagramPacket request = new DatagramPacket(new byte[1], 1);
             socket.receive(request);
             System.out.println("Conectado");
+            writeLog(" New client connected");
 
             InetAddress clientAddress = request.getAddress();
             int clientPort = request.getPort();
 
-            File file = new File("./Quotes.txt");
+            File file = new File(fileName);
             MessageDigest shaDigest = MessageDigest.getInstance("SHA-256");
             String shaChecksum = getFileChecksum(shaDigest, file);
-            String send =  file.getName()+","+shaChecksum;
+            String send =  file.getName()+","+shaChecksum+","+ file.length();
+
+            writeLog("Sending checksum and file info");
+
             DatagramPacket sendPacket = new DatagramPacket(send.getBytes(), send.length(), clientAddress, clientPort);
             socket.send(sendPacket);
             int numberPackets = (int) Math.ceil((double) file.length()/(double) 512);
@@ -63,37 +67,23 @@ public class Server {
             byte[] sendData = new byte[512];
             long current = 0;
             // Se inicia transmision del archivo hasta que se envien todos los paquetes
+            long startTime = System.nanoTime();
+            long elapsedTime = 0;
+
             while(current != numberPackets) {
                 sendData = new byte[512];
+                writeLog("Sending data ...");
+                writeLog("Elapsed time: " + elapsedTime/1000000000 + " s");
                 bis.read(sendData);
                 sendPacket = new DatagramPacket(sendData, sendData.length, clientAddress, clientPort);
                 socket.send(sendPacket);
                 current++;
             }
-
+            long elapsedTime = System.nanoTime() - startTime;
+            System.out.println("Tiempo para enviar el archivo: " + elapsedTime/1000000000+ "s");
+            System.out.println(": Archivo Enviado!");
+            writeLog("Total time: " + elapsedTime/1000000000 + " s");
         }
-
-
-
-
-    }
-
-
-    private void loadQuotesFromFile(String shareFile) throws IOException {
-        BufferedReader reader = new BufferedReader(new FileReader(shareFile));
-        String aQuote;
-
-        while ((aQuote = reader.readLine()) != null) {
-            listQuotes.add(aQuote);
-        }
-
-        reader.close();
-    }
-
-    private String getRandomQuote() {
-        int randomIndex = random.nextInt(listQuotes.size());
-        String randomQuote = listQuotes.get(randomIndex);
-        return randomQuote;
     }
 
     private static String getFileChecksum(MessageDigest digest, File file) throws IOException {
@@ -114,6 +104,17 @@ public class Server {
         }
 
         return sb.toString();
+    }
+
+    private static void writeLog(String msj) throws IOException {
+        FileWriter fw = new FileWriter("./log.txt", true);
+
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        LocalDateTime now = LocalDateTime.now();
+
+        fw.write(dtf.format(now) + msj + "\n");
+
+        fw.close();
     }
 
 
