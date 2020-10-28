@@ -46,7 +46,7 @@ public class Server {
             DatagramPacket request = new DatagramPacket(new byte[1], 1);
             socket.receive(request);
             System.out.println("Conectado");
-            writeLog(" New client connected, assigned Id: 0");
+            writeLog(" New client connected");
 
             InetAddress clientAddress = request.getAddress();
             int clientPort = request.getPort();
@@ -55,6 +55,8 @@ public class Server {
             MessageDigest shaDigest = MessageDigest.getInstance("SHA-256");
             String shaChecksum = getFileChecksum(shaDigest, file);
             String send =  file.getName()+","+shaChecksum+","+ file.length();
+
+            writeLog("Sending checksum and file info");
 
             DatagramPacket sendPacket = new DatagramPacket(send.getBytes(), send.length(), clientAddress, clientPort);
             socket.send(sendPacket);
@@ -65,13 +67,22 @@ public class Server {
             byte[] sendData = new byte[512];
             long current = 0;
             // Se inicia transmision del archivo hasta que se envien todos los paquetes
+            long startTime = System.nanoTime();
+            long elapsedTime = 0;
+
             while(current != numberPackets) {
                 sendData = new byte[512];
+                writeLog("Sending data ...");
+                writeLog("Elapsed time: " + elapsedTime/1000000000 + " s");
                 bis.read(sendData);
                 sendPacket = new DatagramPacket(sendData, sendData.length, clientAddress, clientPort);
                 socket.send(sendPacket);
                 current++;
             }
+            long elapsedTime = System.nanoTime() - startTime;
+            System.out.println("Tiempo para enviar el archivo: " + elapsedTime/1000000000+ "s");
+            System.out.println(": Archivo Enviado!");
+            writeLog("Total time: " + elapsedTime/1000000000 + " s");
         }
     }
 
